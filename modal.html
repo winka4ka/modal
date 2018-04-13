@@ -1,0 +1,63 @@
+<!--
+-->
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='utf-8'>
+  <title>t</title>
+  <link href="modal.css" rel="stylesheet">
+  <script src='modal.js'></script>
+
+  <style>
+  	.a{
+  		 width:300px;
+       height: 2000px;
+  		 background:#EAEAF3;
+  		 margin:0 auto;
+  	}
+    .btn{cursor:pointer;}
+  </style>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  //примеры вызовов:
+  [].forEach.call( document.querySelectorAll('.j-afterClick'), function(el) {
+
+    el.onclick = function () {
+
+      //показать окно в определенный момент
+      //например, после отправки формы
+      // данном случае, при клике
+      showModal('Hello & <b>bye!</b>','Произвольный текст с заголовком');
+      return false;
+    };
+  });
+
+  //стандартно
+  [].forEach.call( document.querySelectorAll('.j-modalShow'), function(el) {
+    showModal(el);
+  });
+
+});
+</script>
+</head>
+ <body>
+	 <div class="a">
+    <div class='btn j-afterClick' >При событии клик</div><br><br>
+    <hr>
+    <div>Стандартные окна:<br><br></div>
+    <div class='btn j-modalShow' data-id='#block'>Показать окно</div><br><br>
+    <div class='btn j-modalShow' data-src='http://transphoto.ru/photo/09/86/04/986048_s.jpg'>Показать фото</div>
+	 </div> 
+
+   <div hidden>
+   <div id='block'>
+   <div>содержимое блока</div>
+   </div>
+   </div>
+
+</body>
+</html>
+
+
+
